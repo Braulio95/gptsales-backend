@@ -45,6 +45,9 @@ TOKEN_EXPIRATION=48h BEARER=Bearer
 **Crea tu base de datos**
 En tu pgAdmin o el gestor de tu preferencia crea una base de datos con el nombre que desees y asegúrate de que sea exactamente igual al valor de la variable de entorno DB_NAME_DEVELOPMENT
 
+**CORS**
+En el archivo main.ts del directorio src verifica que en el middelware CORS en la propiedad origin, la dirección de tu interfaz sea la correcta, de otra manera no de dejara hacer peticiones
+
 **Ya puedes arrancar el server!!!**
 ```bash
 $ npm run start:dev
