@@ -19,17 +19,27 @@ $ npm install
 ```
 Necesitarás crear un archivo .env y configurar las siguientes propiedades. Puedes copiar el env.example.
 
-DB_HOST=localhost 
+DB_HOST=localhost
+
 DB_PORT=puerto donde se despliega tu base de datos postgres default: 5432 
+
 DB_USER= Usuario de tu gestor de base de datos
+
 DB_PASS= Contraseña de tu base de datos 
-DB_DIALECT=Tu servicio de base de datos (postgres, mysql) 
+
+DB_DIALECT=Tu servicio de base de datos (postgres, mysql)
+
 DB_NAME_TEST=test_database_name 
+
 (Como estamos en un ambiente de desarrollo vamos solo a modificar el nombre en development)
 DB_NAME_DEVELOPMENT=nombre de tu base de datos
+
 DB_NAME_PRODUCTION=production_database_name 
+
 NODE_ENV=development
+
 JWTKEY=random_secret_key 
+
 TOKEN_EXPIRATION=48h BEARER=Bearer
 
 **Crea tu base de datos**
