@@ -1,73 +1,68 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+## Bienvenido!!!!
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+Gracias por descargar este repositorio. Acontinuación leeras las instrucciones para echar a andar este proyecto.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+NOTA: Arranca esta aplicación antes de arrancar la interfaz de usuario.
 
-## Description
+## Stack
+Este servidor se conecta a una base de datos PostgreSQL
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Instalación y configuración inicial
 
-## Installation
-
+clona este proyecto utilizando
+```bash
+ git clone
+```
+Instala las dependencias
 ```bash
 $ npm install
 ```
+Necesitarás crear un archivo .env y configurar las siguientes propiedades. Puedes copiar el env.example.
 
-## Running the app
+DB_HOST=localhost
 
+DB_PORT=puerto donde se despliega tu base de datos postgres default: 5432 
+
+DB_USER= Usuario de tu gestor de base de datos
+
+DB_PASS= Contraseña de tu base de datos 
+
+DB_DIALECT=Tu servicio de base de datos (postgres, mysql)
+
+DB_NAME_TEST=test_database_name 
+
+(Como estamos en un ambiente de desarrollo vamos solo a modificar el nombre en development)
+DB_NAME_DEVELOPMENT=nombre de tu base de datos
+
+DB_NAME_PRODUCTION=production_database_name 
+
+NODE_ENV=development
+
+JWTKEY=random_secret_key 
+
+TOKEN_EXPIRATION=48h BEARER=Bearer
+
+**Crea tu base de datos**
+En tu pgAdmin o el gestor de tu preferencia crea una base de datos con el nombre que desees y asegúrate de que sea exactamente igual al valor de la variable de entorno DB_NAME_DEVELOPMENT
+
+**Ya puedes arrancar el server!!!**
 ```bash
-# development
-$ npm run start
-
-# watch mode
 $ npm run start:dev
-
-# production mode
-$ npm run start:prod
 ```
 
-## Test
+## Registrando un usuario
+Con el servidor funcionando podemos registrar a nuestro primer usuario. Para esto puedes usar postman o cualquier servicio de cliente Http que desees. 
 
-```bash
-# unit tests
-$ npm run test
+El endpoint para la creación de un usuario es el siguiente **(sustituye el puerto por el que estés utilizando. La app por default usa el 3000)**: http://localhost:3000/api/v1/auth/signup
 
-# e2e tests
-$ npm run test:e2e
+En el body de la petición debe lucir de la siguiente forma (de preferencia usa las credenciales proporcionadas):
 
-# test coverage
-$ npm run test:cov
-```
+{
+		"name": "admin",
+		"email": "admin@admin.com",
+		"password": "admin"
+}
 
-## Support
+## Listo!!!!
+Con el servidor funcionando y un usuario creado podemos descargar la interfaz de usuario y empezar a crear registros de los libros.
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
