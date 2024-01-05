@@ -52,7 +52,7 @@ export class BooksController {
         return updatedPost;
     }
 
-
+    @UseGuards(AuthGuard('jwt'))
     @Delete(':id')
     async remove(@Param('id') id: number) {
         // delete the post with this id
