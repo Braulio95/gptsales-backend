@@ -53,7 +53,7 @@ $ npm run start:dev
 ## Registrando un usuario
 Con el servidor funcionando podemos registrar a nuestro primer usuario. Para esto puedes usar postman o cualquier servicio de cliente Http que desees. 
 
-El endpoint para la creación de un usuario es el siguiente **(sustituye el puerto por el que estés utilizando. La app por default usa el 300)**: http://localhost:3000/api/v1/auth/signup
+El endpoint para la creación de un usuario es el siguiente **(sustituye el puerto por el que estés utilizando. La app por default usa el 3000)**: http://localhost:3000/api/v1/auth/signup
 
 En el body de la petición debe lucir de la siguiente forma (de preferencia usa las credenciales proporcionadas):
 
